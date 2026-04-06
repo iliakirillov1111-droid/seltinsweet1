@@ -17,9 +17,7 @@
     <meta property="og:url" content="https://seltinsweet.bio">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
-
+    
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
@@ -55,14 +53,19 @@
     }
     </script>
 
+    <!-- Removed Google Fonts and Font Awesome for speed optimization -->
     <style>
+        :root {
+            --font-main: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+            --font-serif: 'Georgia', 'Cambria', 'Times New Roman', Times, serif;
+        }
         body {
-            font-family: 'Raleway', sans-serif;
+            font-family: var(--font-main);
             background-color: #0a0a0a;
             color: #e5e5e5;
             scroll-behavior: smooth;
         }
-        .playfair { font-family: 'Playfair Display', serif; }
+        .playfair { font-family: var(--font-serif); font-style: italic; }
         .text-accent { color: #d4af37; }
         .bg-accent { background-color: #d4af37; }
         .border-accent { border-color: #d4af37; }
@@ -71,6 +74,7 @@
             background: linear-gradient(rgba(10,10,10,0.5), rgba(10,10,10,0.95)), url('seltin_photo.jpg');
             background-size: cover;
             background-position: center;
+            background-color: #0a0a0a;
         }
         
         .card-glass {
@@ -146,16 +150,15 @@
                     </a>
                 </div>
                 <div class="flex gap-6 pt-4">
-                    <a href="https://t.me/+vlobswvULvM5NzE6" class="text-white/40 hover:text-accent transition text-2xl"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="https://t.me/+vlobswvULvM5NzE6" class="text-white/40 hover:text-accent transition text-2xl"><i class="fab fa-twitter"></i></a>
-                    <a href="https://t.me/+vlobswvULvM5NzE6" class="text-white/40 hover:text-accent transition text-2xl"><i class="fab fa-instagram"></i></a>
-                    <a href="https://t.me/+vlobswvULvM5NzE6" class="text-white/40 hover:text-accent transition text-2xl"><i class="fab fa-reddit-alien"></i></a>
+                    <a href="https://t.me/+vlobswvULvM5NzE6" class="text-white/40 hover:text-accent transition text-2xl">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                    </a>
                 </div>
             </div>
             <div class="hidden lg:block relative">
                 <div class="absolute inset-0 bg-accent/15 blur-[150px] rounded-full"></div>
                 <div class="relative z-10 animate-float">
-                    <img src="seltin_photo.jpg" alt="Seltin Sweet (Селтин Свит) — Фото модели" class="rounded-[3rem] border border-accent/20 shadow-2xl transition duration-700 hover:border-accent/50">
+                    <img src="seltin_photo.jpg" alt="Seltin Sweet (Селтин Свит) — Фото модели" class="rounded-[3rem] border border-accent/20 shadow-2xl transition duration-700 hover:border-accent/50" loading="eager" decoding="async">
                 </div>
             </div>
         </div>
@@ -192,7 +195,7 @@
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
             <div class="relative group">
                 <div class="absolute -top-20 -left-20 text-[250px] playfair italic opacity-[0.03] text-accent font-black select-none">Sweet</div>
-                <img src="seltin_photo.jpg" alt="Seltin Sweet биография и история успеха" class="rounded-[4rem] relative z-10 border border-white/10 group-hover:scale-[1.02] transition duration-700">
+                <img src="seltin_photo.jpg" alt="Seltin Sweet биография и история успеха" class="rounded-[4rem] relative z-10 border border-white/10 group-hover:scale-[1.02] transition duration-700" loading="lazy" decoding="async">
                 <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-[100px]"></div>
             </div>
             <div class="space-y-10">
@@ -249,7 +252,7 @@
                 <details class="card-glass rounded-[2rem] p-8 group cursor-pointer" open>
                     <summary class="flex justify-between items-center font-black uppercase tracking-widest text-sm list-none text-accent italic">
                         <span>Как найти официальный Telegram Seltin Sweet?</span>
-                        <i class="fas fa-chevron-down group-open:rotate-180 transition duration-500"></i>
+                        <svg class="w-4 h-4 transition duration-500 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
                     </summary>
                     <p class="mt-6 text-white/50 text-lg leading-relaxed font-light">
                         Все актуальные ссылки на социальные сети, включая <strong class="text-white">телеграм канал Селтин Свит</strong>, находятся на этой странице. Остерегайтесь фейков и используйте только проверенные источники.
@@ -258,7 +261,7 @@
                 <details class="card-glass rounded-[2rem] p-8 group cursor-pointer">
                     <summary class="flex justify-between items-center font-black uppercase tracking-widest text-sm list-none text-accent italic">
                         <span>Правда ли, что в сети есть сливы Seltin Sweet?</span>
-                        <i class="fas fa-chevron-down group-open:rotate-180 transition duration-500"></i>
+                        <svg class="w-4 h-4 transition duration-500 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
                     </summary>
                     <p class="mt-6 text-white/50 text-lg leading-relaxed font-light">
                         Да, модель сама публикует часть контента на платформах вроде Fansly. Самый свежий <strong class="text-white">архив слив Селтин Свит</strong> доступен по кнопкам выше в нашем закрытом сообществе.
@@ -267,7 +270,7 @@
                 <details class="card-glass rounded-[2rem] p-8 group cursor-pointer">
                     <summary class="flex justify-between items-center font-black uppercase tracking-widest text-sm list-none text-accent italic">
                         <span>Какая настоящая фамилия у Селтин Свит?</span>
-                        <i class="fas fa-chevron-down group-open:rotate-180 transition duration-500"></i>
+                        <svg class="w-4 h-4 transition duration-500 group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
                     </summary>
                     <p class="mt-6 text-white/50 text-lg leading-relaxed font-light">
                         На текущий момент <strong class="text-white">настоящая фамилия Seltin Sweet</strong> не разглашается. Модель предпочитает разделять медийный образ и частную жизнь своих близких.
@@ -283,7 +286,7 @@
             <div class="grid md:grid-cols-4 gap-20 mb-24">
                 <div class="col-span-2 space-y-8">
                     <div class="flex items-center gap-4">
-                        <div class="text-4xl text-accent playfair font-black">SS</div>
+                        <div class="text-4xl text-accent playfair font-black italic">SS</div>
                         <span class="text-3xl font-black uppercase tracking-widest text-white italic playfair">Seltin <span class="text-accent italic">Sweet</span></span>
                     </div>
                     <p class="text-white/40 text-lg max-w-md leading-relaxed font-light italic">
@@ -316,11 +319,8 @@
 
             <div class="flex flex-col md:flex-row justify-between items-center gap-10 pt-12 border-t border-white/5">
                 <p class="text-white/20 text-[10px] font-black uppercase tracking-[0.4em] italic">© 2024 Seltin Sweet Official Biography. Все права защищены.</p>
-                <div class="flex gap-10 items-center opacity-20 grayscale hover:grayscale-0 transition">
-                    <i class="fab fa-cc-visa text-3xl"></i>
-                    <i class="fab fa-cc-mastercard text-3xl"></i>
-                    <i class="fab fa-bitcoin text-3xl"></i>
-                    <i class="fab fa-ethereum text-3xl"></i>
+                <div class="flex gap-10 items-center opacity-20 grayscale hover:grayscale-0 transition text-white">
+                    <span class="text-[8px] uppercase tracking-widest">Secured Payments & Privacy</span>
                 </div>
             </div>
         </div>
